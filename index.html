@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>broccoliandpepper | ICT System Engineer</title>
+  <meta
+    name="description"
+    content="Belgium-based ICT System Engineer focused on Entra ID, M365, Security, Windows Server and Active Directory."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="bg-noise"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="#hero" class="brand">broccoliandpepper</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#bio">Profile</a>
+        <a href="#library">Library</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+  <img src="img/Hero.webp" alt="Forest temple pathway" class="hero-image" />
+  <div class="hero-overlay"></div>
+  <div class="hero-vignette"></div>
+
+  <div class="hero-content container hero-content-centered">
+    <p class="eyebrow">BELGIUM-BASED • AUTOMATION • SECURITY • INFRA</p>
+
+    <h1>ICT System Engineer</h1>
+
+    <p class="hero-subtitle">
+      Entra ID, Microsoft 365, Security, Windows Server, and Active Directory —
+      with a calm, structured approach to modern infrastructure and reliable automation.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#library">Explore library</a>
+      <a class="btn btn-secondary" href="#bio">View profile</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <a href="#bio">Scroll</a>
+  </div>
+</section>
+
+    <section id="bio" class="section container">
+      <div class="section-heading">
+        <p class="section-kicker">Profile</p>
+        <h2>A quiet approach to systems, identity, and security.</h2>
+        <p class="section-subtext">
+          I work across Microsoft environments with a focus on clarity, resilience, and maintainable operations.
+          My interests sit at the intersection of infrastructure, identity, automation, and security hardening.
+        </p>
+      </div>
+
+      <div class="bio-grid">
+        <div class="card bio-card">
+          <p>
+            I’m a Belgium-based <strong>ICT System Engineer</strong> with a particular interest in
+            well-structured environments, modern workplace technologies, and secure operational practices.
+          </p>
+          <p>
+            My day-to-day landscape includes <strong>Entra ID</strong>, <strong>Microsoft 365</strong>,
+            <strong>Windows Server</strong>, and <strong>Active Directory</strong> — with a steady appreciation
+            for automation that reduces friction without adding unnecessary complexity.
+          </p>
+          <p>
+            I value systems that are readable, documented, and dependable.
+            Technology should feel intentional: efficient where needed, quiet where possible.
+          </p>
+        </div>
+
+        <div class="card stack-card">
+          <h3>Focus areas</h3>
+          <div class="tags">
+            <span>Entra ID</span>
+            <span>Microsoft 365</span>
+            <span>Security</span>
+            <span>Windows Server</span>
+            <span>Active Directory</span>
+            <span>Automation</span>
+            <span>PowerShell</span>
+            <span>Identity</span>
+            <span>Hardening</span>
+            <span>Infrastructure</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="library" class="section container">
+      <div class="section-heading">
+        <p class="section-kicker">Library</p>
+        <h2>Selected repositories and technical building blocks.</h2>
+        <p class="section-subtext">
+          A small library of themes, experiments, and repositories related to identity, automation,
+          Microsoft infrastructure, and security-minded operations.
+        </p>
+      </div>
+
+      <div class="library-grid" id="libraryGrid"></div>
+    </section>
+  </main>
+
+  <div class="modal" id="repoModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="Close dialog">×</button>
+
+      <div class="modal-content">
+        <p class="modal-kicker">Repository</p>
+        <h3 id="modalTitle">Project title</h3>
+        <p id="modalDescription"></p>
+
+        <div class="tags" id="modalTags"></div>
+
+        <div class="modal-actions">
+          <a
+            id="modalLink"
+            class="btn btn-primary"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Open repository
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
