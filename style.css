@@ -161,12 +161,12 @@ select {
   background: var(--text);
 }
 
-.hero {
+ .hero {
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-end;
+  justify-content: flex-start;
   padding-top: 74px;
   overflow: hidden;
 }
@@ -278,7 +278,7 @@ select {
   /*max-width: 10ch;*/
   font-family: "Manrope", sans-serif;
   font-size: clamp(2rem, 3vw, 3rem);
-  /*line-height: 0.98;*/
+  line-height: 1.4;
   letter-spacing: 0.05em;
   color: #f7fbf7;
   text-wrap: balance;
