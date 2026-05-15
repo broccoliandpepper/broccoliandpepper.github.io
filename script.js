@@ -1,32 +1,32 @@
 const repositories = [
   {
-    title: "Identity Architecture",
-    badge: "Identity",
+    title: "Azure-Hub-and-Spoke-Lab-with-Bicep-Foundation-Phase",
+    badge: "Cloud Architecture",
     description:
-      "Concepts, tools, and repository work related to identity governance, access structure, and Entra ID administration.",
+      "Concepts, tools, and repository work related to network cloud architecture.",
     fullDescription:
-      "A repository space focused on identity architecture, access logic, directory structure, and practical administration around Entra ID and Active Directory. Built around clarity, maintainability, and secure operational flow.",
-    tags: ["Entra ID", "AD", "Identity", "Access"],
-    link: "https://github.com/broccoliandpepper"
+      "A repository space focused on Azure network architecture, particularly the hub-and-spoke model. This includes Bicep templates, design patterns, and practical implementations for secure and scalable virtual networks in Azure.",
+    tags: ["Azure", "VNet", "Hub & Spoke", "Network security groups", "Bicep"],
+    link: "https://github.com/broccoliandpepper/Azure-Hub-and-Spoke-Lab-with-Bicep-Foundation-Phase"
   },
   {
-    title: "Microsoft 365 Automation",
-    badge: "Automation",
+    title: "Infra-pfSense",
+    badge: "Network Security",
     description:
-      "Scripts and repeatable workflows designed to reduce friction in Microsoft 365 administration.",
+      "A complete, production-ready home laboratory infrastructure based on pfSense, Hyper-V, Samba AD, VLANs, and DMZ isolation with Traefik reverse proxy.",
     fullDescription:
-      "A collection of automation-oriented work around Microsoft 365, with attention to consistency, documentation, and useful operational gains. The goal is simple: fewer repetitive tasks, cleaner administration.",
-    tags: ["M365", "Automation", "PowerShell", "Operations"],
-    link: "https://github.com/broccoliandpepper"
+      "this repository is a comprehensive home lab infrastructure project centered around pfSense for network security. It includes Hyper-V for virtualization, Samba AD for directory services, VLANs for network segmentation, and DMZ isolation with Traefik as a reverse proxy. The project is designed to provide a secure and functional environment for learning and experimentation.",
+    tags: ["Network Security", "pfSense", "virtualization", "Samba AD", "VLANs", "DMZ", "Traefik"],
+    link: "https://github.com/broccoliandpepper/Infra-pfSense"
   },
   {
-    title: "Infrastructure & Hardening",
-    badge: "Security",
+    title: "Jobs-Tracker-Project",
+    badge: "Career Development",
     description:
-      "Projects related to Windows Server environments, baseline hardening, and resilient infrastructure practices.",
+      "Job application tracker — Node.js · Express · SQLite · Vanilla JS · Ollama AI · n8n Webhook",
     fullDescription:
-      "This area reflects a practical interest in infrastructure stability, Windows Server administration, security hardening, and dependable technical foundations. Thoughtful setup matters as much as functionality.",
-    tags: ["Windows Server", "Security", "Hardening", "Infra"],
+      "A job application tracker built with Node.js, Express, SQLite, and Vanilla JS. It integrates Ollama AI for intelligent insights and n8n Webhook for automation. This project helps users manage their job applications efficiently, providing features like tracking application status, setting reminders, and generating reports.",
+    tags: ["Node.js", "Express", "SQLite", "Vanilla JS", "Ollama AI", "n8n Webhook"],
     link: "https://github.com/broccoliandpepper"
   }
 ];
