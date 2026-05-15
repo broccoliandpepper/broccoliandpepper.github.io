@@ -27,7 +27,7 @@ const repositories = [
     fullDescription:
       "A job application tracker built with Node.js, Express, SQLite, and Vanilla JS. It integrates Ollama AI for intelligent insights and n8n Webhook for automation. This project helps users manage their job applications efficiently, providing features like tracking application status, setting reminders, and generating reports.",
     tags: ["Node.js", "Express", "SQLite", "Vanilla JS", "Ollama AI", "n8n Webhook"],
-    link: "https://github.com/broccoliandpepper"
+    link: "https://github.com/broccoliandpepper/Jobs-Tracker-Project"
   }
 ];
 

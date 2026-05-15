@@ -1,37 +1,32 @@
-## Welcome to GitHub Pages
+# broccoliandpepper.github.io
 
-You can use the [editor on GitHub](https://github.com/broccoliandpepper/broccoliandpepper.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Personal portfolio website for broccoliandpepper.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Live site: https://broccoliandpepper.github.io/
 
-### Markdown
+## Project Structure
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- `index.html`: Main page markup
+- `style.css`: Global styles and layout
+- `script.js`: Frontend interactions
+- `img/Hero.webp`: Hero image asset
 
-```markdown
-Syntax highlighted code block
+## Local Preview
 
-# Header 1
-## Header 2
-### Header 3
+Open `index.html` directly in a browser, or run a local static server.
 
-- Bulleted
-- List
+Example with Python:
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```bash
+python3 -m http.server 8080
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Then open http://localhost:8080
 
-### Jekyll Themes
+## Deployment
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/broccoliandpepper/broccoliandpepper.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+This repository is published with GitHub Pages at:
 
-### Support or Contact
+https://broccoliandpepper.github.io/
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Any push to the publishing branch updates the website after a short build delay.
