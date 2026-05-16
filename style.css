@@ -234,7 +234,7 @@ select {
   width: fit-content;
   max-width: none;
   font-family: "Manrope", sans-serif;
-  font-size: clamp(1rem, 2vw, 2.2rem);
+  font-size: clamp(2rem, 3vw, 3.2rem);
   /*line-height: 1.1;*/
   letter-spacing: 0.13em;
   color: #f7fbf7;
@@ -286,8 +286,8 @@ select {
 .section-kicker,
 .modal-kicker {
   margin: 0 0 1rem;
-  color: #d7e4d8;
-  font-size: 0.78rem;
+  color: #ffffff;
+  font-size: 1.2rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
