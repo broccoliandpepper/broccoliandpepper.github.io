@@ -242,7 +242,7 @@ select {
 .hero-content .eyebrow,
 .hero-content h1,
 .hero-content .hero-subtitle {
-  text-shadow: 0 1 5px rgba(7, 38, 20, 0.75);
+  text-shadow: 0 0 2px rgba(7, 38, 20, 0.75);
 }
 
 .hero-actions,
@@ -282,33 +282,6 @@ select {
   opacity: 0.92;
 }
 
-.hero h1 {
-  margin: 0;
-  /*max-width: 10ch;*/
-  font-family: "Manrope", sans-serif;
-  font-size: clamp(2rem, 3vw, 3rem);
-  line-height: 1.4;
-  letter-spacing: 0.05em;
-  color: #f7fbf7;
-  text-wrap: balance;
-}
-
-.hero-subtitle {
-  margin: 1.5rem 0 0;
-  max-width: 720px;
-  color: #d5ddd6;
-  font-size: 1.06rem;
-  line-height: 1.95;
-}
-
-.hero-actions,
-.modal-actions {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 2.2rem;
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -336,20 +309,16 @@ select {
   background: rgba(255,255,255,0.03);
 }
 
-.hero-scroll {
-  position: absolute;
-  left: 50%;
-  bottom: 2rem;
-  z-index: 2;
-  transform: translateX(-50%);
+.btn:focus-visible,
+.nav-links a:focus-visible,
+.modal-close:focus-visible {
+  outline: 2px solid #a6c8ff;
+  outline-offset: 3px;
 }
 
-.hero-scroll a {
-  font-size: 0.86rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #d2dbd3;
-  opacity: 0.82;
+.repo-card:focus-visible {
+  outline: 2px solid #a6c8ff;
+  outline-offset: 4px;
 }
 
 .section {

@@ -45,6 +45,9 @@ const navLinks = document.getElementById("navLinks");
 repositories.forEach((repo) => {
   const article = document.createElement("article");
   article.className = "card repo-card";
+  article.tabIndex = 0;
+  article.setAttribute("role", "button");
+  article.setAttribute("aria-label", `Open repository details for ${repo.title}`);
   article.innerHTML = `
     <div class="card-topline">
       <span class="badge">${repo.badge}</span>
@@ -56,6 +59,12 @@ repositories.forEach((repo) => {
     </div>
   `;
   article.addEventListener("click", () => openModal(repo));
+  article.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openModal(repo);
+    }
+  });
   libraryGrid.appendChild(article);
 });
 
