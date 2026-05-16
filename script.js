@@ -1,36 +1,3 @@
-const repositories = [
-  {
-    title: "Azure-Hub-and-Spoke-Lab-with-Bicep-Foundation-Phase",
-    badge: "Cloud Architecture",
-    description:
-      "Concepts, tools, and repository work related to network cloud architecture.",
-    fullDescription:
-      "A repository space focused on Azure network architecture, particularly the hub-and-spoke model. This includes Bicep templates, design patterns, and practical implementations for secure and scalable virtual networks in Azure.",
-    tags: ["Azure", "VNet", "Hub & Spoke", "Network security groups", "Bicep"],
-    link: "https://github.com/broccoliandpepper/Azure-Hub-and-Spoke-Lab-with-Bicep-Foundation-Phase"
-  },
-  {
-    title: "Infra-pfSense",
-    badge: "Network Security",
-    description:
-      "A complete, production-ready home laboratory infrastructure based on pfSense, Hyper-V, Samba AD, VLANs, and DMZ isolation with Traefik reverse proxy.",
-    fullDescription:
-      "this repository is a comprehensive home lab infrastructure project centered around pfSense for network security. It includes Hyper-V for virtualization, Samba AD for directory services, VLANs for network segmentation, and DMZ isolation with Traefik as a reverse proxy. The project is designed to provide a secure and functional environment for learning and experimentation.",
-    tags: ["Network Security", "pfSense", "virtualization", "Samba AD", "VLANs", "DMZ", "Traefik"],
-    link: "https://github.com/broccoliandpepper/Infra-pfSense"
-  },
-  {
-    title: "Jobs-Tracker-Project",
-    badge: "Career Development",
-    description:
-      "Job application tracker — Node.js · Express · SQLite · Vanilla JS · Ollama AI · n8n Webhook",
-    fullDescription:
-      "A job application tracker built with Node.js, Express, SQLite, and Vanilla JS. It integrates Ollama AI for intelligent insights and n8n Webhook for automation. This project helps users manage their job applications efficiently, providing features like tracking application status, setting reminders, and generating reports.",
-    tags: ["Node.js", "Express", "SQLite", "Vanilla JS", "Ollama AI", "n8n Webhook"],
-    link: "https://github.com/broccoliandpepper/Jobs-Tracker-Project"
-  }
-];
-
 const libraryGrid = document.getElementById("libraryGrid");
 const repoModal = document.getElementById("repoModal");
 const modalBackdrop = document.getElementById("modalBackdrop");
@@ -42,31 +9,115 @@ const modalLink = document.getElementById("modalLink");
 const navToggle = document.getElementById("navToggle");
 const navLinks = document.getElementById("navLinks");
 
-repositories.forEach((repo) => {
-  const article = document.createElement("article");
-  article.className = "card repo-card";
-  article.tabIndex = 0;
-  article.setAttribute("role", "button");
-  article.setAttribute("aria-label", `Open repository details for ${repo.title}`);
-  article.innerHTML = `
-    <div class="card-topline">
-      <span class="badge">${repo.badge}</span>
-    </div>
-    <h3>${repo.title}</h3>
-    <p>${repo.description}</p>
-    <div class="tags">
-      ${repo.tags.map(tag => `<span>${tag}</span>`).join("")}
-    </div>
-  `;
-  article.addEventListener("click", () => openModal(repo));
-  article.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      openModal(repo);
-    }
+const GITHUB_USERNAME = "broccoliandpepper";
+const FEATURED_TOPIC = "featured";
+const FEATURED_MARKER = "[featured]";
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/\"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function isFeaturedRepo(repo) {
+  const topics = Array.isArray(repo.topics) ? repo.topics : [];
+  const hasFeaturedTopic = topics.includes(FEATURED_TOPIC);
+  const description = (repo.description || "").toLowerCase();
+  const hasFeaturedMarker = description.includes(FEATURED_MARKER);
+
+  return hasFeaturedTopic || hasFeaturedMarker;
+}
+
+function mapRepo(repo) {
+  const rawDescription = repo.description || "No description provided.";
+  const cleanDescription = rawDescription
+    .replace(/\[featured\]/ig, "")
+    .trim() || "No description provided.";
+
+  return {
+    title: repo.name,
+    badge: repo.language || "Repository",
+    description: cleanDescription,
+    fullDescription: cleanDescription,
+    tags: Array.isArray(repo.topics) ? repo.topics : [],
+    link: repo.html_url
+  };
+}
+
+function renderEmptyState(message) {
+  libraryGrid.innerHTML = `<p>${escapeHtml(message)}</p>`;
+}
+
+function renderRepositories(repositories) {
+  libraryGrid.innerHTML = "";
+
+  repositories.forEach((repo) => {
+    const article = document.createElement("article");
+    article.className = "card repo-card";
+    article.tabIndex = 0;
+    article.setAttribute("role", "button");
+    article.setAttribute("aria-label", `Open repository details for ${repo.title}`);
+    article.innerHTML = `
+      <div class="card-topline">
+        <span class="badge">${escapeHtml(repo.badge)}</span>
+      </div>
+      <h3>${escapeHtml(repo.title)}</h3>
+      <p>${escapeHtml(repo.description)}</p>
+      <div class="tags">
+        ${repo.tags.map((tag) => `<span>${escapeHtml(tag)}</span>`).join("")}
+      </div>
+    `;
+
+    article.addEventListener("click", () => openModal(repo));
+    article.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openModal(repo);
+      }
+    });
+
+    libraryGrid.appendChild(article);
   });
-  libraryGrid.appendChild(article);
-});
+}
+
+async function loadRepositories() {
+  renderEmptyState("Loading repositories...");
+
+  try {
+    const response = await fetch(
+      `https://api.github.com/users/${GITHUB_USERNAME}/repos?type=owner&sort=updated&per_page=100`,
+      {
+        headers: {
+          Accept: "application/vnd.github+json",
+          "X-GitHub-Api-Version": "2022-11-28"
+        }
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`GitHub API error: ${response.status}`);
+    }
+
+    const repos = await response.json();
+    const featuredRepos = repos
+      .filter((repo) => !repo.fork)
+      .filter(isFeaturedRepo)
+      .map(mapRepo);
+
+    if (!featuredRepos.length) {
+      renderEmptyState("No featured repositories found. Add topic 'featured' to a repository.");
+      return;
+    }
+
+    renderRepositories(featuredRepos);
+  } catch (error) {
+    renderEmptyState("Unable to load repositories for now.");
+    console.error(error);
+  }
+}
 
 function openModal(repo) {
   modalTitle.textContent = repo.title;
@@ -102,3 +153,5 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
     navLinks.classList.remove("open");
   });
 });
+
+loadRepositories();
