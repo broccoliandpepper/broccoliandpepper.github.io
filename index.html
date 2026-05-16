@@ -43,7 +43,7 @@
   <main>
     <section id="hero" class="hero">
   <img src="img/Hero.webp" alt="Forest temple pathway" class="hero-image" />
-  
+  <div class="hero-overlay"></div>
   <div class="hero-vignette"></div>
 
   <div class="hero-content container hero-content-centered">
@@ -134,15 +134,11 @@
 
       <div class="modal-content">
         <p class="modal-kicker">Repository</p>
-        <h3 id="modalTitle">Project title</h3>
-        <p id="modalDescription"></p>
-
-        <div class="tags" id="modalTags"></div>
-
-        <div class="modal-actions">
+        <div class="modal-header">
+          <h3 id="modalTitle">Project title</h3>
           <a
             id="modalLink"
-            class="btn btn-primary"
+            class="modal-link"
             href="#"
             target="_blank"
             rel="noopener noreferrer"
@@ -150,6 +146,9 @@
             Open repository
           </a>
         </div>
+        <p id="modalDescription"></p>
+
+        <div class="tags" id="modalTags"></div>
       </div>
     </div>
   </div>
