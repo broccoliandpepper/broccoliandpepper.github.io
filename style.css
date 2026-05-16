@@ -120,12 +120,23 @@ select {
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   font-family: "Manrope", sans-serif;
   font-size: 0.98rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: lowercase;
   color: #f3f7f3;
+}
+
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -558,6 +569,16 @@ select {
 }
 
 @media (max-width: 760px) {
+  .brand {
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
   .nav-toggle {
     display: block;
   }

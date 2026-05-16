@@ -3,11 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>broccoliandpepper | ICT System Engineer</title>
-  <meta
-    name="description"
-    content="Belgium-based ICT System Engineer focused on Entra ID, M365, Security, Windows Server and Active Directory."
-  />
+  <title>Jean-Marc Alpesse | ICT System Engineer | Broccoliandpepper</title>
+  <meta name="description" content="Belgium-based ICT System Engineer focused on Entra ID, Microsoft 365, Security, Windows Server, and Active Directory. Portfolio, automation, and modern infrastructure." />
+  <meta name="keywords" content="ICT, System Engineer, Entra ID, Microsoft 365, Security, Windows Server, Active Directory, Automation, Belgium, Jean-Marc Alpesse, Portfolio" />
+  <meta name="author" content="Jean-Marc Alpesse" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://broccoliandpepper.github.io/" />
+  <meta property="og:title" content="Jean-Marc Alpesse | ICT System Engineer" />
+  <meta property="og:description" content="Belgium-based ICT System Engineer focused on Entra ID, Microsoft 365, Security, Windows Server, and Active Directory." />
+  <meta property="og:image" content="https://broccoliandpepper.github.io/img/Hero.webp" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jean-Marc Alpesse | ICT System Engineer" />
+  <meta name="twitter:description" content="Belgium-based ICT System Engineer focused on Entra ID, Microsoft 365, Security, Windows Server, and Active Directory." />
+  <meta name="twitter:image" content="https://broccoliandpepper.github.io/img/Hero.webp" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png" />
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml" sizes="any" />
+  <link rel="icon" href="img/favicon.ico" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <link rel="manifest" href="img/site.webmanifest" />
+  <meta name="theme-color" content="#0a1124" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "name": "Jean-Marc Alpesse",
+          "url": "https://broccoliandpepper.github.io/",
+          "image": "https://broccoliandpepper.github.io/img/logo.png",
+          "jobTitle": "ICT System Engineer",
+          "homeLocation": {
+            "@type": "Place",
+            "name": "Belgium"
+          },
+          "knowsAbout": [
+            "Entra ID",
+            "Microsoft 365",
+            "Security",
+            "Windows Server",
+            "Active Directory",
+            "Automation"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "name": "Broccoliandpepper",
+          "url": "https://broccoliandpepper.github.io/",
+          "inLanguage": "en"
+        }
+      ]
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -24,7 +78,10 @@
 
   <header class="site-header">
     <nav class="navbar">
-      <a href="#hero" class="brand">broccoliandpepper</a>
+      <a href="#hero" class="brand" aria-label="broccoliandpepper home">
+        <img src="img/logo.png" alt="Broccoliandpepper logo" class="brand-logo" />
+        <span>broccoliandpepper</span>
+      </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Open navigation">
         <span></span>
